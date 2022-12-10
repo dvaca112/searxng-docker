@@ -43,6 +43,8 @@ services:
      - "127.0.0.1:8080:8080"
     volumes:
       - ./searxng:/etc/searxng:rw
+      - ./favicon.png:/usr/local/searxng/searx/static/themes/simple/img/favicon.png
+      - ./favicon.svg:/usr/local/searxng/searx/static/themes/simple/img/favicon.svg
     environment:
       - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME:-localhost}/
     cap_drop:
